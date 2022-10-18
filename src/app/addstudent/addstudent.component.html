@@ -1,0 +1,74 @@
+     
+     <div class="container">
+            <div class="row g-3"><br>
+
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" name="name"[(ngModel)]="name">
+                </div>
+
+
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Rollno">Roll Number</label>
+                    <input type="text" class="form-control" placeholder="Enter your roll number" name="rollno"[(ngModel)]="rollno">
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Admission Number">Admission Number</label>
+                    <input type="text" class="form-control" placeholder="Enter your admission number" name="admissionno"[(ngModel)]="admissionno">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="College">College</label>
+                    <input type="text" class="form-control" placeholder="Enter college name" name="college"[(ngModel)]="college">
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Department">Department</label>
+                          <select class="form-control" name="department"[(ngModel)]="department" id="">
+                             <option value="Select">------select-------</option>
+                             <option value="Computer Science Engineering">Computer Science Engineering</option>
+                             <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                             <option value="Mechanical Engineering">Mechanical Engineering</option>
+                             <option value="Civil Engineering">Civil Engineering</option>
+                             <option value="Biotechnology">Biotechnology</option>
+                             <option value="Chemical Engineering">Chemical Engineering</option>
+                           </select>
+                 </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Blood Group">Blood Group</label>
+                        <select class="form-control" name="bloodgroup"[(ngModel)]="bloodgroup" id="">
+                             <option value="select">------select-------</option>
+                             <option value="A RhD Positive">A+</option>
+                             <option value="A RhD negative">A-</option>
+                             <option value="B RhD Positive">B+</option>
+                             <option value="B RhD negative">B-</option>
+                             <option value="O RhD Positive">O+</option>
+                             <option value="O RhD negative">O-</option>
+                             <option value="AB RhD Positive">AB+</option>
+                            <option value="AB RhD negative">AB-</option>
+                        </select>
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="DOB">DOB</label>
+                    <input type="date" name="dob"[(ngModel)]="dob" id="" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Parent name">Parent name</label>
+                    <input type="text" class="form-control" placeholder="Enter your Parent name" name="parentName"[(ngModel)]="parentName">
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Parent Email">Parent Email Id</label>
+                    <input type="email" name="parentEmailid"[(ngModel)]="parentEmailid" id="" class="form-control">
+
+                </div>
+                <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <label for="Guardian Name">Guardian Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your Guardian name" name="guardianName"[(ngModel)]="guardianName">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Guardian Address">Guardian Address</label>
+                    <textarea name="guardianAddress"[(ngModel)]="guardianAddress" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <button class="btn btn-success" [disabled]="status" (click)="readValues()">Submit</button>
+                </div>
+            </div>
+       </div>

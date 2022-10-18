@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AdminloginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myrouter:Router) { }
 
   userName=""
   password=""
@@ -20,7 +20,7 @@ export class AdminloginComponent implements OnInit {
     }
 
     if(this.userName=="admin" && this.password=="12345"){
-      alert("Login Successfully!!!")
+      this.myrouter.navigate(["/add"])
     }else
     {
       alert("Invalid credential")

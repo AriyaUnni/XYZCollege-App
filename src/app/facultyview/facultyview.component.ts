@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-facultyview',
@@ -7,14 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacultyviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) {
 
-  facultyData:any=[
-    {"facultyName":"Antony","department":"Electronics and Communication Engineering","designation":"professor","dob":"03-04-1974","educationalQualification":"phd","address":"netpark hillwayview","mobileNumber":"789456123","dateofJoining":"11-07-2018"},
-    {"facultyName":"Simi","department":"Computer Science Engineering","designation":"professor","dob":"03-04-1974","educationalQualification":"MCA","address":"viewPoint partment","mobileNumber":"789456123","dateofJoining":"11-07-2018"},
-    {"facultyName":"Sneha","department":"Civil Engineering","designation":"lecturer","dob":"03-04-1974","educationalQualification":"MTech","address":" hillwayview","mobileNumber":"789456123","dateofJoining":"11-07-2018"},
-    {"facultyName":"Babu","department":"Mechanical Engineering","designation":"Assistant professor","dob":"03-04-1974","educationalQualification":"BTech","address":"national park","mobileNumber":"789456123","dateofJoining":"11-07-2018"}
-  ]
+    this.fetchData()
+   }
+
+  fetchData=()=>{
+    this.myapi.viewFaculty().subscribe(
+      (data)=>{
+        this.facultyData=data
+      }
+    )
+  }
+
+  deleteFaculty=(id:any)=>{
+    let data={"id":id}
+    this.myapi.deleteFaculty(data).subscribe(
+      (response)=>{
+        alert("DELETED")
+      }
+    )
+
+    this.fetchData()
+  }
+
+  facultyData:any=[]
 
   ngOnInit(): void {
   }

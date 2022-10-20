@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StudentviewComponent } from './studentview/studentview.component';
 import { AddfacultyComponent } from './addfaculty/addfaculty.component';
 import { FacultyviewComponent } from './facultyview/facultyview.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 
 const appRoutes:Routes=[
   {
@@ -27,6 +29,9 @@ const appRoutes:Routes=[
   },
   {
     path:"viewfaculty",component:FacultyviewComponent
+  },
+  {
+    path:"searchstudent",component:SearchstudentComponent
   }
 ]
 
@@ -38,13 +43,15 @@ const appRoutes:Routes=[
     NavbarComponent,
     StudentviewComponent,
     AddfacultyComponent,
-    FacultyviewComponent
+    FacultyviewComponent,
+    SearchstudentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
